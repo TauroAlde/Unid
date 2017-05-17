@@ -1,0 +1,17 @@
+default: &default 
+  adapter: postgresql 
+  username: amed
+  password: amed 
+  host: localhost 
+
+development: 
+  <<: *default 
+  database: unid_development
+
+test:
+  <<: *default 
+  database: unid_test 
+
+production: 
+  <<: *default 
+  database: unid_production
