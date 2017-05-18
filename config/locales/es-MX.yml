@@ -18,8 +18,11 @@ es-MX:
         one: "Usuario"
         other: "Usuarios"
       :comment:
-          one: "Comentario"
-          other: "Comentarios"
+        one: "Comentario"
+        other: "Comentarios"
+      :student:
+        one: "Estudiante"
+        other: "Estudiantes"
     attributes:
 
     errors:
