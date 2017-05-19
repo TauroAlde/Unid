@@ -2,7 +2,7 @@ class CreateStudents < ActiveRecord::Migration
   def change
     create_table :students do |t|
       t.string :first_name
-      t.string :father_last_name 
+      t.string :father_last_name
       t.string :mother_last_name
       t.integer :enrollment
       t.string :curp
