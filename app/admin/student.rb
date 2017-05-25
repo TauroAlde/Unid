@@ -4,7 +4,8 @@ ActiveAdmin.register Student do
 #
   permit_params :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
-                :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :emial, :phone, :cell_phone, :job, :address]
+                :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :emial, :phone, :cell_phone, :job, :address],
+                carrer_attributes: [:carrer_id ,:id, :name]
 #
 # or
 #
@@ -19,6 +20,10 @@ ActiveAdmin.register Student do
       f.input :father_last_name
       f.input :mother_last_name
       f.input :enrollment
+      f.object.careers.build
+      f.has_many :careers, heading: "Carrera", new_record: true, allow_destroy: false  do |h|
+        h.input :student_id, label: 'Licensiatura', as: :select, collection: Career.all.map(&:name)
+      end
       f.input :curp
       f.input :email
       f.input :address
@@ -30,7 +35,7 @@ ActiveAdmin.register Student do
       f.input :link_twitter
       f.input :link_twitter
       f.inputs do
-        f.object.build_tutor  # show a default reference
+        f.object.build_tutor if f.object.new_record? # show a default reference
         f.has_many :tutor, heading: "Tutor", new_record: false, allow_destroy: false do |d|
           d.input :full_name
           d.input :email
