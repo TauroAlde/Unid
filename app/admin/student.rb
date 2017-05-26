@@ -4,7 +4,7 @@ ActiveAdmin.register Student do
 #
   permit_params :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
-                :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :emial, :phone, :cell_phone, :job, :address],
+                :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :email, :phone, :cell_phone, :job, :address],
                 carrer_attributes: [:carrer_id ,:id, :name]
 #
 # or
@@ -16,10 +16,10 @@ ActiveAdmin.register Student do
 # end
   form do |f|
     f.inputs do
+      f.input :enrollment
       f.input :first_name
       f.input :father_last_name
       f.input :mother_last_name
-      f.input :enrollment
       f.object.careers.build
       f.has_many :careers, heading: "Carrera", new_record: true, allow_destroy: false  do |h|
         h.input :student_id, label: 'Licensiatura', as: :select, collection: Career.all.map(&:name)
@@ -32,7 +32,6 @@ ActiveAdmin.register Student do
       f.input :cell_phone
       f.input :link_facebook
       f.input :link_instagram
-      f.input :link_twitter
       f.input :link_twitter
       f.inputs do
         f.object.build_tutor if f.object.new_record? # show a default reference
@@ -49,6 +48,35 @@ ActiveAdmin.register Student do
     f.actions
   end
 
+  show do
+    attributes_table do
+      row :first_name
+      row :father_last_name
+      row :mother_last_name
+      row :enrollment
+      row :curp
+      row :email
+      row :enrollment
+      row :cp
+      row :phone
+      row :cell_phone
+      row :address
+      row :link_facebook
+      row :link_instagram
+      row :link_twitter
+    end
+  end
+  sidebar "Informacion del tutor", only: [:show, :edit] do
+    attributes_table_for student.tutor do
+      row :full_name
+      row :email
+      row :phone
+      row :cell_phone
+      row :job
+      row :address
+    end
+  end
+
   filter :first_name
   filter :father_last_name
   filter :mother_last_name
@@ -59,6 +87,6 @@ ActiveAdmin.register Student do
   filter :cp
   filter :phone
   filter :cell_phone
-  filter :tutor_full_name_eq, label: "Nombre del tutor"
+  filter :tutor_full_name_cont, label: "Nombre del tutor"
 
 end

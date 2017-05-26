@@ -2,7 +2,7 @@ class CreateCareers < ActiveRecord::Migration
   def change
     create_table :careers do |t|
       t.string :name
-      t.integers :student_id           # relation
+      t.integer :student_id           # relation
       t.timestamps null: false
     end
   end
