@@ -11,10 +11,15 @@ ActiveAdmin.register Career do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-form do |f|
+  form do |f|
     f.inputs do
       f.input :name
     end
-end
+    f.actions
+  end
+
+  filter :name
+  filter :created_at
+  filter :updated_at
 
 end

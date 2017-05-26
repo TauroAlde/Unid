@@ -27,6 +27,33 @@ es-MX:
         one: "Estudiante"
         other: "Estudiantes"
     attributes:
+      career:
+        created_at: "Creado"
+        updated_at: "Actualizado"
+        name: "Nombre"
+        student: ""
+      tutor:
+        full_name: "Nombre Completo"
+        email: "Correo Electronico"
+        phone: "Telefono"
+        cell_phone: Celular
+        job: "Ocupación"
+        address: "Dirección"
+
+      student:
+        first_name: "Nombre"
+        father_last_name: "Apellido Paterno"
+        mother_last_name: "Apellido Materno"
+        enrollment: "Matricula"
+        curp: "curp"
+        email: "Correo Electronico"
+        address: "Dirección"
+        cp: "Codigo Postal"
+        phone: "Telefono"
+        cell_phone: "Celular"
+        link_facebook: "Facebook"
+        link_instagram: "Instagram"
+        link_twitter: "Twitter"
 
     errors:
       messages:
