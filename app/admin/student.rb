@@ -66,7 +66,7 @@ ActiveAdmin.register Student do
       row :link_twitter
     end
   end
-  sidebar "Informacion del tutor", only: [:show, :edit] do
+  sidebar "Informacion de contacto", only: [:show, :edit] do
     attributes_table_for student.tutor do
       row :full_name
       row :email
@@ -81,12 +81,19 @@ ActiveAdmin.register Student do
   filter :father_last_name
   filter :mother_last_name
   filter :enrollment
-  filter :curp
-  filter :email
-  filter :enrollment
-  filter :cp
-  filter :phone
   filter :cell_phone
-  filter :tutor_full_name_cont, label: "Nombre del tutor"
+  filter :careers_name_cont, label: "Carrera"
+  
+  index do
+  selectable_column
+  column :enrollment
+  column :first_name
+  column :father_last_name
+  column :mother_last_name
+  column :email
+  column :phone
+  column :cell_phone
+  actions
+end
 
 end

@@ -1,12 +1,55 @@
 es-MX:
   devise:
-    failure:
-      user:
-        not_found_in_database: "Usuario o contraseña no valido"
-        unauthenticated: "No autenticado"
     sessions:
       user:
-        signed_in: "Sesión Iniciada"  
+        signed_in: "Sesion Iniciada"
+    failure:
+      unauthenticated: "Debe iniciar sesión o registrarse antes de continuar"
+  active_admin:
+    search_status:
+      current_scope: "Todos"
+      headline: "Scope:"
+      current_filters: "Current filters:"
+      no_current_filters: "None"
+    devise:
+      failure:
+        unauthenticated: "Debe iniciar sesión o registrarse antes de continuar"
+      username:
+        title: "Usuario"
+      email:
+        title: "Correo"
+      subdomain:
+        title: "Subdomain"
+      password:
+        title: "Contraseña"
+      password_confirmation:
+        title: "Confirmar Contraseña"
+      sign_up:
+        title: "Sign up"
+        submit: "Sign up"
+      login:
+        title: "Iniciar sesión"
+        remember_me: "Recordar"
+        submit: "Iniciar sesión"
+      reset_password:
+        title: "Forgot your password?"
+        submit: "Reset My Password"
+      change_password:
+        title: "Change your password"
+        submit: "Change my password"
+      unlock:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
+      resend_confirmation_instructions:
+        title: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+      links:
+        sign_up: "Sign up"
+        sign_in: "Sign in"
+        forgot_your_password: ""
+        sign_in_with_omniauth_provider: "Sign in with %{provider}"
+        resend_unlock_instructions: "Resend unlock instructions"
+        resend_confirmation_instructions: "Resend confirmation instructions"
   formtastic:
     :yes: 'Si'
     :no: 'No'

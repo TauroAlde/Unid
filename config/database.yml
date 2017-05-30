@@ -1,17 +1,19 @@
-default: &default 
-  adapter: postgresql 
-  username: amed
-  password: amed 
-  host: localhost 
+default: &default
+  adapter: :postgresql
+  encoding: UTF8
+  pool: 5
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host:     <%= ENV['IP'] %>
 
-development: 
-  <<: *default 
-  database: unid_development
+development:
+  <<: *default
+  database: app_development
 
 test:
-  <<: *default 
-  database: unid_test 
+  <<: *default
+  database: app_test
 
-production: 
-  <<: *default 
-  database: unid_production
+production:
+  <<: *default
+  database: app_production
