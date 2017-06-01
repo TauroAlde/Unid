@@ -5,7 +5,7 @@ ActiveAdmin.register Student do
   permit_params :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
                 :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :email, :phone, :cell_phone, :job, :address],
-                carrer_attributes: [:carrer_id ,:id, :name]
+                student_careers_attributes: [:career_id ,:id, :student_id]
 #
 # or
 #
@@ -20,9 +20,9 @@ ActiveAdmin.register Student do
       f.input :first_name
       f.input :father_last_name
       f.input :mother_last_name
-      f.object.careers.build
-      f.has_many :careers, heading: "Carrera", new_record: true, allow_destroy: false  do |h|
-        h.input :student_id, label: 'Licensiatura', as: :select, collection: Career.all.map(&:name)
+      f.object.student_careers.build if f.object.new_record?
+      f.has_many :student_careers,   heading: "Carrera", new_record: false, allow_destroy: false  do |h|
+        h.input :career, label: 'Licenciatura'
       end
       f.input :curp
       f.input :email
@@ -54,6 +54,9 @@ ActiveAdmin.register Student do
       row :father_last_name
       row :mother_last_name
       row :enrollment
+      row :career do |student|
+        student.careers.map(&:name).join(", ")
+      end
       row :curp
       row :email
       row :enrollment
