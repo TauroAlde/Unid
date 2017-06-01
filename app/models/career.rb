@@ -1,3 +1,4 @@
 class Career < ActiveRecord::Base
-  belongs_to :student
+  has_many :students, through: :student_careers
+  has_many :student_careers
 end
