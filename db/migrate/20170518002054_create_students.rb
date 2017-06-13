@@ -14,6 +14,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :link_facebook
       t.string :link_instagram
       t.string :link_twitter
+      t.integer :status         #enumerable
       t.timestamps null: false
     end
   end

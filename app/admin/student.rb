@@ -2,7 +2,7 @@ ActiveAdmin.register Student do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
+  permit_params :status, :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
                 :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :email, :phone, :cell_phone, :job, :address],
                 student_careers_attributes: [:career_id ,:id, :student_id]
@@ -17,6 +17,7 @@ ActiveAdmin.register Student do
   form do |f|
     f.inputs do
       f.input :enrollment
+      f.input :status
       f.input :first_name
       f.input :father_last_name
       f.input :mother_last_name
@@ -53,13 +54,13 @@ ActiveAdmin.register Student do
       row :first_name
       row :father_last_name
       row :mother_last_name
+      row :status
       row :enrollment
       row :career do |student|
         student.careers.map(&:name).join(", ")
       end
       row :curp
       row :email
-      row :enrollment
       row :cp
       row :phone
       row :cell_phone
@@ -67,6 +68,7 @@ ActiveAdmin.register Student do
       row :link_facebook
       row :link_instagram
       row :link_twitter
+      row :updated_at
     end
   end
   sidebar "Informacion de contacto", only: [:show, :edit] do
@@ -84,7 +86,7 @@ ActiveAdmin.register Student do
   filter :father_last_name
   filter :mother_last_name
   filter :enrollment
-  filter :cell_phone
+  filter :status
   filter :careers_name_cont, label: "Carrera"
   
   index do
@@ -93,9 +95,8 @@ ActiveAdmin.register Student do
   column :first_name
   column :father_last_name
   column :mother_last_name
-  column :email
-  column :phone
-  column :cell_phone
+  column :updated_at
+
   actions
 end
 

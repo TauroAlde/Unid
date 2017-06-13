@@ -11,4 +11,6 @@ class Student < ActiveRecord::Base
 
   accepts_nested_attributes_for :tutor, allow_destroy: false
   accepts_nested_attributes_for :student_careers, allow_destroy: false
+
+  enum status: [:activo, :inactivo, :baja]
 end
