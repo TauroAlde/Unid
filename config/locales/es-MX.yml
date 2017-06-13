@@ -8,9 +8,9 @@ es-MX:
   active_admin:
     search_status:
       current_scope: "Todos"
-      headline: "Scope:"
-      current_filters: "Current filters:"
-      no_current_filters: "None"
+      headline: "Titulo"
+      current_filters: "Filtros Actuales"
+      no_current_filters: "No hay filtros actuales"
     devise:
       failure:
         unauthenticated: "Debe iniciar sesión o registrarse antes de continuar"
@@ -78,7 +78,6 @@ es-MX:
         created_at: "Fecha de Creado"
         updated_at: "Actualizado Última Vez"
         name: "Nombre"
-        student: ""
       tutor:
         full_name: "Nombre Completo"
         email: "Correo Electrónico"
@@ -87,14 +86,16 @@ es-MX:
         job: "Ocupación"
         address: "Dirección"
       student:
+        career: "Carrera"
         first_name: "Nombre"
         father_last_name: "Apellido Paterno"
         mother_last_name: "Apellido Materno"
-        enrollment: "Matricula"
-        curp: "curp"
+        enrollment: "Matrícula"
+        status: "Estado"
+        curp: "CURP"
         email: "Correo Electrónico"
         address: "Dirección"
-        cp: "Codigo Postal"
+        cp: "Código Postal"
         phone: "Teléfono"
         cell_phone: "Celular"
         link_facebook: "Facebook"
