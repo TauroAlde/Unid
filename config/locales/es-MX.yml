@@ -6,9 +6,17 @@ es-MX:
     failure:
       unauthenticated: "Debe iniciar sesión o registrarse antes de continuar"
   active_admin:
+    filters:
+      predicates:
+        cont: "Igual"
+        careers: "Carrera"
+        first_name: "Nombre"
+        father_last_name: "Apellido Paterno"
+        mother_last_name: "Apellido Materno"
+        enrollment: "Matrícula"
     search_status:
-      current_scope: "Todos"
-      headline: "Titulo"
+      current_scope: "Busqueda"
+      headline: "Estado de la busqueda"
       current_filters: "Filtros Actuales"
       no_current_filters: "No hay filtros actuales"
     devise:
