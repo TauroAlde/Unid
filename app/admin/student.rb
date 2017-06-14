@@ -96,8 +96,28 @@ ActiveAdmin.register Student do
   column :father_last_name
   column :mother_last_name
   column :updated_at
-
   actions
 end
+
+  csv do
+    column :first_name
+    column :father_last_name
+    column :mother_last_name
+    column :status
+    column :enrollment
+    column :career do |student|
+      student.careers.map(&:name).join(", ")
+    end
+    column :curp
+    column :email
+    column :cp
+    column :phone
+    column :cell_phone
+    column :address
+    column :link_facebook
+    column :link_instagram
+    column :link_twitter
+    column :updated_at
+  end
 
 end
