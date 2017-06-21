@@ -2,6 +2,7 @@ es-MX:
   devise:
     sessions:
       user:
+        admin_details: "Detalles del Administrador"
         signed_in: "Sesion Iniciada"
     failure:
       unauthenticated: "Debe iniciar sesión o registrarse antes de continuar"
@@ -10,7 +11,7 @@ es-MX:
       predicates:
         cont: "Igual"
         careers: "Carrera"
-        first_name: "Nombre"
+        first_name: "Nombres"
         father_last_name: "Apellido Paterno"
         mother_last_name: "Apellido Materno"
         enrollment: "Matrícula"
@@ -67,7 +68,7 @@ es-MX:
     :cancel: 'Cancelar %{model}'
     :reset: 'Resetear %{model}'
     :required: 'Requerido'
-  activerecord: 
+  activerecord:
     models:
       career:
         one: "Carrera"
@@ -81,10 +82,28 @@ es-MX:
       :student:
         one: "Estudiante"
         other: "Estudiantes"
+      teacher:
+        one: "Mestro(a)"
+        other: "Maestros(a)"
     attributes:
+      user:
+        first_name: "Nombres"
+        last_name: "Apellidos"
+        username: "Nombre de usuario"
+        admin: "Administrador(a)"
+        email: "Correo"
+        password: "Contraseña"
+        password_confirmation: "Confirmar Contraseña"
+        last_sign_in_at: "Ultima vez iniciado"
+        sign_in_count: "Veces Iniciada"
+        created_at: "Creado en"
+        encrypted_password: "Contraseña encriptada"
+        updated_at: "Actualizado por última vez"
+        current_sign_in_ip: "Dirección de IP actual"
+        last_sign_in_ip: "Ultima dirección IP conectado"
       career:
         created_at: "Fecha de Creado"
-        updated_at: "Actualizado Última Vez"
+        updated_at: "Actualizado por última vez"
         name: "Nombre"
       tutor:
         full_name: "Nombre Completo"
@@ -110,7 +129,24 @@ es-MX:
         link_instagram: "Instagram"
         link_twitter: "Twitter"
         created_at: "Fecha de Creado"
-        updated_at: "Actualizado Última Vez"
+        updated_at: "Actualizado por última vez"
+      teacher:
+        first_name: "Nombres"
+        father_last_name: "Apellido Paterno"
+        mother_last_name: "Apellido Materno"
+        enrollment: "Matrícula"
+        status: "Estado"
+        email: "Correo Electrónico"
+        phone: "Teléfono"
+        cell_phone: "Celular"
+        degree: "Licenciatura"
+        degree_number: "Número de Cedula De Licenciatura"
+        master_degree: "Maestría"
+        master_degree_number: "Número de Cedula de Maestría"
+        doctorate: "Doctorado"
+        doctorate_number: "Número de Cedulra De Doctorado"
+        work_place: "Lugar De Trabajo"
+
 
     errors:
       messages:

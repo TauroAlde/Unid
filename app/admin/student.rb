@@ -90,14 +90,14 @@ ActiveAdmin.register Student do
   filter :careers_name_cont, label: "Carrera"
   
   index do
-  selectable_column
-  column :enrollment
-  column :first_name
-  column :father_last_name
-  column :mother_last_name
-  column :updated_at
-  actions
-end
+    selectable_column
+    column :enrollment
+    column :first_name
+    column :father_last_name
+    column :mother_last_name
+    column :updated_at
+    actions
+  end
 
   csv do
     column :first_name
