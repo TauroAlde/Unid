@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
     div do
       image_tag("ceibateam.png", class: "ceiba")
     end
-    div class: "blank_slate_container", id: "dashboard_default_message" do
+    div class: "blank_slate_container" do
       span class: "blank_slate" do
         span ("Bienvenido a Ceiba Team")
         #small ("active_admin.dashboard_welcome.call_to_action")

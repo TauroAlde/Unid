@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :password, :password_confirmation
+  permit_params :email, :password, :password_confirmation, :username, :first_name, :last_name
 
   index do
     selectable_column
@@ -14,6 +14,7 @@ ActiveAdmin.register User do
 
   filter :first_name
   filter :last_name
+  filter :username
   filter :admin
   filter :email
   filter :created_at
