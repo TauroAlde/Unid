@@ -2,7 +2,7 @@ ActiveAdmin.register Student do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :status, :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
+  permit_params :title, :content, :image, :status, :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
                 :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :email, :phone, :cell_phone, :job, :address],
                 student_careers_attributes: [:career_id ,:id, :student_id]
@@ -16,6 +16,10 @@ ActiveAdmin.register Student do
 # end
   form do |f|
     f.inputs do
+      f.inputs "Attachment", :multipart => true do 
+        f.input :image, :as => :file, :hint => image_tag(f.object.image.url) 
+        f.input :image_cache, :as => :hidden 
+      end
       f.input :enrollment
       f.input :status
       f.input :first_name
@@ -51,6 +55,11 @@ ActiveAdmin.register Student do
 
   show do
     attributes_table do
+      row "Imagen" do
+        ul do
+          image_tag(student.image_url, class: "imaga_student")
+        end
+      end
       row :first_name
       row :father_last_name
       row :mother_last_name

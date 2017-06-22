@@ -70,6 +70,9 @@ es-MX:
     :required: 'Requerido'
   activerecord:
     models:
+      admin:
+        one: "Administrador"
+        other: "Administradores"
       career:
         one: "Carrera"
         other: "Carreras"
@@ -113,6 +116,7 @@ es-MX:
         job: "Ocupación"
         address: "Dirección"
       student:
+        image: "Imagen"
         career: "Carrera"
         first_name: "Nombre"
         father_last_name: "Apellido Paterno"
@@ -144,7 +148,7 @@ es-MX:
         master_degree: "Maestría"
         master_degree_number: "Número de Cedula de Maestría"
         doctorate: "Doctorado"
-        doctorate_number: "Número de Cedulra De Doctorado"
+        doctorate_number: "Número de Cedula De Doctorado"
         work_place: "Lugar De Trabajo"
 
 

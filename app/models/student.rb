@@ -9,6 +9,8 @@ class Student < ActiveRecord::Base
   validates :father_last_name, presence: true
   validates :email, presence: true
 
+  mount_uploader :image, ImageUploader
+
   accepts_nested_attributes_for :tutor, allow_destroy: false
   accepts_nested_attributes_for :student_careers, allow_destroy: false
 
