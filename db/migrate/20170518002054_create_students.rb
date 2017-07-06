@@ -5,6 +5,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :father_last_name
       t.string :mother_last_name
       t.string :enrollment
+      t.string :quarter
       t.string :curp
       t.string :email
       t.string :address

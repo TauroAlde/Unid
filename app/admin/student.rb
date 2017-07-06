@@ -2,7 +2,7 @@ ActiveAdmin.register Student do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :content, :image, :status, :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
+  permit_params :title, :content, :quarter, :image, :status, :first_name, :father_last_name, :mother_last_name, :enrollment, :curp,
                 :email, :address, :cp, :phone, :cell_phone, :link_facebook, :link_instagram,
                 :link_twitter, tutor_attributes: [:tutor_id, :id, :full_name, :email, :phone, :cell_phone, :job, :address],
                 student_careers_attributes: [:career_id ,:id, :student_id]
@@ -21,6 +21,7 @@ ActiveAdmin.register Student do
         f.input :image_cache, :as => :hidden 
       end
       f.input :enrollment
+      f.input :quarter
       f.input :status
       f.input :first_name
       f.input :father_last_name
@@ -65,6 +66,7 @@ ActiveAdmin.register Student do
       row :mother_last_name
       row :status
       row :enrollment
+      row :quarter
       row :career do |student|
         student.careers.map(&:name).join(", ")
       end
@@ -96,6 +98,7 @@ ActiveAdmin.register Student do
   filter :mother_last_name
   filter :enrollment
   filter :status
+  filter :quarter
   filter :careers_name_cont, label: "Carrera"
   
   index do
@@ -114,6 +117,7 @@ ActiveAdmin.register Student do
     column :mother_last_name
     column :status
     column :enrollment
+    column :quarter
     column :career do |student|
       student.careers.map(&:name).join(", ")
     end

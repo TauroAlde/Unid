@@ -122,6 +122,7 @@ es-MX:
         father_last_name: "Apellido Paterno"
         mother_last_name: "Apellido Materno"
         enrollment: "Matrícula"
+        quarter: "Cuatrimestre"
         status: "Estado"
         curp: "CURP"
         email: "Correo Electrónico"
